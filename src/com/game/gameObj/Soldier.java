@@ -4,7 +4,7 @@ public class Soldier {
 	
 	public int GameObjId;
 	
-	private String GameObjType = this.getClass().getName();
+	private final static String GameObjType = "Soldier";
 	
 	public int SoldierType;
 
@@ -13,6 +13,8 @@ public class Soldier {
 	public int SoldierSk1;
 
 	public int SoldierSk2;
+	
+	public Coordinate Coor = new Coordinate();
 
 	public int getSoldierType() {
 		return SoldierType;
@@ -56,6 +58,10 @@ public class Soldier {
 
 	public String getGameObjType() {
 		return GameObjType;
+	}
+
+	public Coordinate getCoor() {
+		return Coor;
 	}
 	
 	

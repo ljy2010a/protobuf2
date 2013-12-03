@@ -17,7 +17,7 @@ public static GameProto.GameAction getGameAction(String ActionType,WarShip arg_O
 				Builder.setWarShipLevel(arg_Origin.getWarShipLevel());
 				Builder.setWarShipSk1(arg_Origin.getWarShipSk1());
 				Builder.setWarShipSk2(arg_Origin.getWarShipSk2());
-//			gameGameObjectBuilder.setCoord(CoordBuilder.CoordBuild(0, 0, 0));
+		gameGameObjectBuilder.setCoord(CoordBuilder.buildCoord(arg_Origin.getCoor().getX(),arg_Origin.getCoor().getY(),arg_Origin.getCoor().getZ()));
 
 		gameGameObjectBuilder.setGameObjId(arg_Origin.getGameObjId());
 
@@ -63,7 +63,7 @@ public static GameProto.GameAction getGameAction(WarShip arg_Origin,boolean isSy
 
 		if (isSyncCoor){
 
-//			gameGameObjectBuilder.setCoord(CoordBuilder.CoordBuild(0, 0, 0));
+		gameGameObjectBuilder.setCoord(CoordBuilder.buildCoord(arg_Origin.getCoor().getX(),arg_Origin.getCoor().getY(),arg_Origin.getCoor().getZ()));
 
 		}
 		gameGameObjectBuilder.setGameObjId(arg_Origin.getGameObjId());

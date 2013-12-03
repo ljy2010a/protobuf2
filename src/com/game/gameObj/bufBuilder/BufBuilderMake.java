@@ -6,6 +6,8 @@ import java.io.PrintWriter;
 
 public class BufBuilderMake {
 
+	public static String[] typeNames = {"Soldier","WarShip"};
+	
 	/**
 	 * @param args
 	 * @throws ClassNotFoundException 
@@ -17,7 +19,8 @@ public class BufBuilderMake {
 	
 	public static String GameObjType  = "GameObjType";
 	
-	public static String[] typeNames = {"Soldier","WarShip"};
+	public static String Coor = "Coor";
+	
 	
 	public static void main(String[] args) throws ClassNotFoundException, IOException {
 		// TODO Auto-generated method stub
@@ -83,7 +86,7 @@ public class BufBuilderMake {
 //        	System.out.println(c.getFields()[i].getType().getName());
         	String FieldsName = c.getFields()[i].getName();
         	
-        	if(FieldsName == GameObjId || FieldsName == GameObjType ){
+        	if(FieldsName == GameObjId || FieldsName == GameObjType || FieldsName == Coor){
         		continue;
         	}
         	
@@ -109,7 +112,7 @@ public class BufBuilderMake {
         }
         
         //TODO SetCoord
-        Head +=  "//\t\t\tgameGameObjectBuilder.setCoord(CoordBuilder.CoordBuild(0, 0, 0));\n\n";
+        Head +=  "\t\tgameGameObjectBuilder.setCoord(CoordBuilder.buildCoord(arg_Origin.getCoor().getX(),arg_Origin.getCoor().getY(),arg_Origin.getCoor().getZ()));\n\n";
         
         if(!isAllFunc){
         	Head +=  "\t\t}\n";

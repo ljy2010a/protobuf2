@@ -20,30 +20,21 @@ public class GameMsgHandler {
 //		String[] subPaths = ActionPath.split("\\.");
 //		for (int i = 0; i < subPaths.length; i++) {
 //			System.out.println(subPaths[i]);
-//		}		
-
+//		}
 
 		Class<?> c = Class.forName("com.game." + ActionPath);
-		
-		
-//		Object invokeTester = c.newInstance();
-		// 调用InvokeTester对象的add()方法
-		for(int i = 0 ; i<c.getMethods().length; i++ ){			
-			System.out.println(c.getMethods()[i].getName());
-		}
-		Method method = c.getMethod("call");
-		
-		
-		
-		
-//		Object result = method.invoke(invokeTester, agr_GameMsg);
-//		System.out.println(result);
-//		Class<?> debugSwitcherClass = Class.forName("com.game." + ActionPath);
-//	for(int i = 0 ; i<debugSwitcherClass.getMethods().length; i++ ){			
-//	System.out.println(debugSwitcherClass.getMethods()[i].getName());
-//}
-//        debugSwitcherClass.getMethod("call").invoke(agr_GameMsg);
-	}
 
+		Object invokeTester = c.newInstance();
+
+		Method method = c.getMethod("call",agr_GameMsg.getClass());
+		
+		Object result = method.invoke(invokeTester, agr_GameMsg);
+
+		System.out.println(result);
+
+// test for the static func
+//		Class<?> debugClass = Class.forName("com.game."+ActionPath);
+//      debugClass.getMethod("call",agr_GameMsg.getClass()).invoke(debugSwitcherClass,agr_GameMsg);
+	}
 }
 

@@ -1,12 +1,13 @@
-package com.game.gameObj;
+package com.game.gameObj.bufBuilder;
 
 import java.util.EnumMap;
 
+import com.game.gameObj.Soldier;
 import com.game.protobuf.GameProto;
 import com.game.protobuf.ModelAttr;
 import com.game.protobuf.ModelAttr.SoldierAttr;
 
-public class TestSoldierFacade {
+public class TestSoldierCode {
 	
 	public static GameProto.GameAction getGameAction(Soldier arg_Soldier,boolean isSyncCoor ,SoldierAttr... SoldierAttrs){	
 
@@ -23,7 +24,7 @@ public class TestSoldierFacade {
 				soldierBuilder.setSoldierType(arg_Soldier.getSoldierType());
 				continue;
 			}
-		}					
+		}	
 		
 		if (isSyncCoor){
 //			gameGameObjectBuilder.setCoord(SoldierBuilder.getGameAction(0, 0, 0));

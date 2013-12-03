@@ -17,7 +17,7 @@ public static GameProto.GameAction getGameAction(String ActionType,Soldier arg_O
 				Builder.setSoldierLevel(arg_Origin.getSoldierLevel());
 				Builder.setSoldierSk1(arg_Origin.getSoldierSk1());
 				Builder.setSoldierSk2(arg_Origin.getSoldierSk2());
-//			gameGameObjectBuilder.setCoord(CoordBuilder.CoordBuild(0, 0, 0));
+		gameGameObjectBuilder.setCoord(CoordBuilder.buildCoord(arg_Origin.getCoor().getX(),arg_Origin.getCoor().getY(),arg_Origin.getCoor().getZ()));
 
 		gameGameObjectBuilder.setGameObjId(arg_Origin.getGameObjId());
 
@@ -63,7 +63,7 @@ public static GameProto.GameAction getGameAction(Soldier arg_Origin,boolean isSy
 
 		if (isSyncCoor){
 
-//			gameGameObjectBuilder.setCoord(CoordBuilder.CoordBuild(0, 0, 0));
+		gameGameObjectBuilder.setCoord(CoordBuilder.buildCoord(arg_Origin.getCoor().getX(),arg_Origin.getCoor().getY(),arg_Origin.getCoor().getZ()));
 
 		}
 		gameGameObjectBuilder.setGameObjId(arg_Origin.getGameObjId());

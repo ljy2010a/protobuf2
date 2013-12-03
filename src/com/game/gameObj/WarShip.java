@@ -13,6 +13,8 @@ public class WarShip {
 	public int WarShipSk1;
 
 	public int WarShipSk2;
+	
+	public Coordinate Coor = new Coordinate();
 
 	public int getGameObjId() {
 		return GameObjId;
@@ -56,6 +58,14 @@ public class WarShip {
 
 	public String getGameObjType() {
 		return GameObjType;
+	}
+
+	public Coordinate getCoor() {
+		return Coor;
+	}
+
+	public void setCoor(Coordinate coor) {
+		Coor = coor;
 	}
 	
 	
