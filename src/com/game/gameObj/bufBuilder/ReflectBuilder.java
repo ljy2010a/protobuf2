@@ -78,7 +78,7 @@ public class ReflectBuilder {
 
         gameGameObjectBuilder.setGameObjType((String) arg_Origin.getClass().getMethod("get"+GameObjTypeField).invoke(arg_Origin));
 
-          gameGameObjectBuilder.getClass().getMethod("set" + GameObjType, Class.forName(GameObjBuilder.getClass().getName())).invoke(gameGameObjectBuilder, GameObjBuilder);
+        gameGameObjectBuilder.getClass().getMethod("set" + GameObjType, Class.forName(GameObjBuilder.getClass().getName())).invoke(gameGameObjectBuilder, GameObjBuilder);
 
         GameProto.GameAction.Builder gameActionBuilder = GameProto.GameAction.newBuilder();
 
