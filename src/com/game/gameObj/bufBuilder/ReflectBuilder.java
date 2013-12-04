@@ -5,7 +5,6 @@ import java.lang.reflect.Method;
 
 import com.game.gameObj.Soldier;
 import com.game.protobuf.GameProto;
-import com.game.protobuf.ModelAttr;
 import com.game.protobuf.ModelAttr.SoldierAttr;
 
 public class ReflectBuilder {
@@ -19,9 +18,6 @@ public class ReflectBuilder {
     public static GameProto.GameAction getGameAction(Object arg_Origin, boolean isSyncCoor, String ActionType, Object... Attrs) throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, ClassNotFoundException, NoSuchFieldException, InstantiationException {
 
         GameProto.GameObject.Builder gameGameObjectBuilder = GameProto.GameObject.newBuilder();
-
-        ModelAttr.Soldier.Builder Builder = ModelAttr.Soldier.newBuilder();
-
 
         Method getGameObjTypeMethod = arg_Origin.getClass().getMethod("get" + GameObjTypeField);
 
@@ -82,9 +78,7 @@ public class ReflectBuilder {
 
         gameGameObjectBuilder.setGameObjType((String) arg_Origin.getClass().getMethod("get"+GameObjTypeField).invoke(arg_Origin));
 
-        gameGameObjectBuilder.setSoldier(Builder);
-
-        gameGameObjectBuilder.getClass().getMethod("set" + GameObjType, Class.forName(GameObjBuilder.getClass().getName())).invoke(gameGameObjectBuilder, GameObjBuilder);
+          gameGameObjectBuilder.getClass().getMethod("set" + GameObjType, Class.forName(GameObjBuilder.getClass().getName())).invoke(gameGameObjectBuilder, GameObjBuilder);
 
         GameProto.GameAction.Builder gameActionBuilder = GameProto.GameAction.newBuilder();
 
