@@ -7,7 +7,6 @@ import com.game.protobuf.GameProto;
 
 public class GameMsgHandler {
 
-	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static void GameMsgHandle(GameProto.GameMsg agr_GameMsg)
 			throws IllegalAccessException, IllegalArgumentException,
 			InvocationTargetException, NoSuchMethodException,

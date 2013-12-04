@@ -1,6 +1,11 @@
 package com.game.Request;
 
-public class LoginRequest {
+import com.game.util.UserInfo;
 
+public class LoginRequest {
+	
+	public UserInfo UserInfo;
+	
+	
 	
 }
