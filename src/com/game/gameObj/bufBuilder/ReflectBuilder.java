@@ -98,6 +98,7 @@ public class ReflectBuilder {
         soldier.setSoldierSk1(12);
         soldier.setSoldierType(4545);
         soldier.getCoor().setX(52463);
+        soldier.getCoor().setY(52463);
 
 
         System.out.println(getGameAction(soldier, true, "update", SoldierAttr.SoldierSk1, SoldierAttr.SoldierLevel).toString());
